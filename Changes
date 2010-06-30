@@ -1,0 +1,18 @@
+Revision history for JooseX.Attribute
+
+{{ $NEXT }}
+
+    - github repo recreated, as the `git clone` from github was failing
+    - switched to Dist::Zilla
+    - removed unnecessary accessor's overrides in Lazy and Accessor.Combined roles 
+
+0.02   xxxxxxxxxx
+
+    - `lazy` property of the [lazy] attributes now may contain the name of the method to call
+    - fixed bug, when setter for lazy attribute did not set the predicate 
+   
+
+0.01   Mon, Feb 22, 2010
+
+    - initial release 
+   

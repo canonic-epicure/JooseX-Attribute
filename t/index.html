@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <script type="text/javascript" src="/jsan/Task/Joose/Stable.js"></script>
+    
+        <!-- Ext bridge  -->
+        
+        <link rel="stylesheet" type="text/css" href="/jsan/Task/ExtJS/resources/css/ext-all.css">
+        <script type="text/javascript" src="/jsan/Task/ExtJS/Adapter/Ext.js"></script>
+
+        <script type="text/javascript" src="/jsan/JooseX/Bridge/Ext.js"></script>
+        <script type="text/javascript">
+            Ext.extend = JooseX.Bridge.Ext.my.extend; 
+        </script>
+        
+        <script type="text/javascript" src="/jsan/Task/ExtJS/All.js"></script>
+        
+        <!-- eof Ext bridge  -->
+        
+        
+        <script type="text/javascript" src="/jsan/ExtX/Reference/Slot.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/jsan/Test/Run/static/css/all.css">
+        <script type="text/javascript" src="/jsan/Task/Test/Run/ExtJS.js"></script>
+        
+        <script type="text/javascript" src="../Components.JS"></script>
+    </head>
+    
+    <body>
+        <script type="text/javascript">
+            Test.Run.Harness.Browser.Multi.my.configure({
+                title : 'Advanced attribute test suite',
+                
+                preload : [
+                    '/jsan/Task/Joose/Core.js',
+                    '+Bootstrap'
+                ]
+            })    
+            
+            
+            Test.Run.Harness.Browser.Multi.my.start(
+                '010_trigger.t.js',
+                '020_lazy.t.js',
+                '030_combined.t.js',
+                
+                '100_all_in_one.t.js'
+            )
+        </script>
+    </body>
+</html>
