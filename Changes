@@ -2,6 +2,8 @@ Revision history for JooseX.Attribute
 
 {{ $NEXT }}
 
+0.03      2010-06-30 08:17
+
     - github repo recreated, as the `git clone` from github was failing
     - switched to Dist::Zilla
     - removed unnecessary accessor's overrides in Lazy and Accessor.Combined roles 
