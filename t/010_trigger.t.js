@@ -36,5 +36,4 @@ StartTest(function(t) {
     
     t.ok(testClass.trigger == 'bar', "Value of 'trigger' attribute is correct")    
     t.ok(testClass.res == 'triggered', ".. and the trigger function was executed")    
-    
 })    
