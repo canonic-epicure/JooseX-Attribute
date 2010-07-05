@@ -2,6 +2,8 @@ Revision history for JooseX.Attribute
 
 {{ $NEXT }}
 
+0.04      2010-07-05 19:15
+
     - test suite now passes on the NodeJS platform
 
 0.03      2010-06-30 08:17
