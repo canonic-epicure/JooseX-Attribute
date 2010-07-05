@@ -8,7 +8,7 @@ if (typeof process != 'undefined' && process.pid) {
     Harness = Test.Run.Harness.Browser.ExtJS
 
     
-Harness.my.configure({
+Harness.configure({
     title : 'Advanced attribute test suite',
 
     preload : [
@@ -18,9 +18,10 @@ Harness.my.configure({
 })
 
 
-Harness.my.start(
+Harness.start(
     '010_trigger.t.js',
     '020_lazy.t.js',
     '030_combined.t.js',
     '100_all_in_one.t.js'
 )
+
