@@ -2,6 +2,8 @@ Revision history for JooseX.Attribute
 
 {{ $NEXT }}
 
+0.05      2010-09-10 15:22
+
     - first release in the `npm`, none functional changes
 
 0.04      2010-07-05 19:15
