@@ -29,6 +29,8 @@ To use the new features, add the bootstraping source file as in Synopsis.
 
 Please refer to documentation of each role for details:
 
+> - [JooseX.Attribute.Delegate](Attribute/Delegate.html)
+
 > - [JooseX.Attribute.Trigger](Attribute/Trigger.html)
 
 > - [JooseX.Attribute.Lazy](Attribute/Lazy.html)

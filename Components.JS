@@ -1,7 +1,7 @@
 COMPONENTS = {
     
 	"Core" : [
-        "JooseX.Attribute.Delegated",
+        "JooseX.Attribute.Delegate",
         "JooseX.Attribute.Trigger",
         "JooseX.Attribute.Lazy",
         "JooseX.Attribute.Accessor.Combined"

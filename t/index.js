@@ -22,6 +22,7 @@ Harness.start(
     '010_trigger.t.js',
     '020_lazy.t.js',
     '030_combined.t.js',
+    '040_delegation.t.js',
     '100_all_in_one.t.js'
 )
 
