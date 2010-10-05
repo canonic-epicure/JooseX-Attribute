@@ -3,6 +3,7 @@ Revision history for JooseX.Attribute
 {{ $NEXT }}
 
     - implemented and tested the delegation feature
+    - dependency from Joose bumped to 3.012 
 
 0.05      2010-09-10 15:22
 
