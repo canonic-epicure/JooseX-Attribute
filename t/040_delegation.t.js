@@ -12,7 +12,7 @@ StartTest(function(t) {
     Class('TestClass', {
         has : {
             attr : {
-                handles : [ 'method1', 'method2' ]
+                handles : [ 'method1', 'method2', 'method3' ]
             }
         }
     })
@@ -26,14 +26,14 @@ StartTest(function(t) {
         attr : {
             method1 : function () { return 1 },
             method2 : function () { return 2 },
-            method3 : function () { return 3 }
+            method3 : function (a) { return a }
         }
     })    
     
     
     t.ok(testClass.method1() == 1, "Delegated method works correctly #1") 
     t.ok(testClass.method2() == 2, "Delegated method works correctly #2")
-    t.ok(testClass.attr.method3() == 3, "Direct method call works correctly")
+    t.ok(testClass.method3(3) == 3, "Direct method call works correctly")
     
     
     //==================================================================================================================================================================================
@@ -71,16 +71,16 @@ StartTest(function(t) {
     
     var testClass = new TestClass2({
         attr : {
-            method1 : function () { return 1 },
-            method2 : function () { return 2 },
-            method3 : function () { return 3 }
+            method1 : function (f) { return 1 + f},
+            method2 : function (s) { return 2 + s},
+            method3 : function (t) { return 3 + t}
         }
     })    
     
     
-    t.ok(testClass.first() == 1, "Delegated method works correctly #1") 
-    t.ok(testClass.second() == 2, "Delegated method works correctly #2")
-    t.ok(testClass.attr.method3() == 3, "Direct method call works correctly")
+    t.ok(testClass.first(1) == 2, "Delegated method works correctly #1") 
+    t.ok(testClass.second(1) == 3, "Delegated method works correctly #2")
+    t.ok(testClass.attr.method3(2) == 5, "Direct method call works correctly")
     
     
     t.done()
