@@ -7,7 +7,7 @@ StartTest(function(t) {
     
 
     //==================================================================================================================================================================================
-    t.diag("Testing attributes with delegation - as simple array")    
+    t.diag("Testing attributes with delegation - as array")    
     
     Class('TestClass', {
         has : {
@@ -50,8 +50,7 @@ StartTest(function(t) {
     
     
     //==================================================================================================================================================================================
-    t.diag("Testing attributes with delegation - as simple array")    
-    
+    t.diag("Testing attributes with delegation - as object")    
     
     Class('TestClass2', {
         has : {
@@ -71,9 +70,9 @@ StartTest(function(t) {
     
     var testClass = new TestClass2({
         attr : {
-            method1 : function (f) { return 1 + f},
-            method2 : function (s) { return 2 + s},
-            method3 : function (t) { return 3 + t}
+            method1 : function (f) { return 1 + f },
+            method2 : function (s) { return 2 + s },
+            method3 : function (t) { return 3 + t }
         }
     })    
     
@@ -82,6 +81,29 @@ StartTest(function(t) {
     t.ok(testClass.second(1) == 3, "Delegated method works correctly #2")
     t.ok(testClass.attr.method3(2) == 5, "Direct method call works correctly")
     
+    
+    //==================================================================================================================================================================================
+    t.diag("Testing attributes with delegation - as simple string")    
+    
+    Class('TestClass3', {
+        has : {
+            attr : {
+                handles : 'method1'
+            }
+        }
+    })
+    
+    t.ok(TestClass3.meta.hasAttribute('attr'), "TestClass3 has 'attr' attribute")
+    t.ok(TestClass3.meta.hasMethod('method1'), "TestClass3 has 'method1' method")
+    
+    
+    var testClass3 = new TestClass3({
+        attr : {
+            method1 : function (f) { return 1 + f }
+        }
+    })    
+    
+    t.ok(testClass3.method1(1) == 2, "Delegated method works correctly #1") 
     
     t.done()
 })    
