@@ -2,6 +2,8 @@ Revision history for JooseX.Attribute
 
 {{ $NEXT }}
 
+0.08      2010-10-11 16:00
+
     - fixed bug, when delegated methods were being called in wrong scope
 
 0.07      2010-10-06 12:28
