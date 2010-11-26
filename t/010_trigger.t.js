@@ -1,7 +1,5 @@
 StartTest(function(t) {
     
-    t.plan(4)
-    
     //==================================================================================================================================================================================
     t.diag("Sanity")    
     
@@ -10,6 +8,8 @@ StartTest(function(t) {
     
     //==================================================================================================================================================================================
     t.diag("Trigger testing")
+    
+    var triggerCount = 1
     
     Class('TestClass', {
         has : {
@@ -21,10 +21,18 @@ StartTest(function(t) {
             trigger : {
                 init : 'foo',
                 
-                trigger : function (value) {
-                    t.ok(value == 'bar', 'Trigger received new attribute value')
+                trigger : function (value, oldValue) {
+                    if (triggerCount == 1) {
+                        t.ok(oldValue == 'foo', 'Correct old value')
+                        t.ok(value == 'bar', 'Trigger received new attribute value')
+                        
+                        this.setRes('triggered')
+                    }
                     
-                    this.setRes('triggered') 
+                    if (triggerCount == 2) {
+                        t.ok(oldValue == 'bar', 'Correct old value')
+                        t.ok(value == 'baz', 'Trigger received new attribute value')
+                    }
                 } 
             }
         }
@@ -35,5 +43,11 @@ StartTest(function(t) {
     })    
     
     t.ok(testClass.trigger == 'bar', "Value of 'trigger' attribute is correct")    
-    t.ok(testClass.res == 'triggered', ".. and the trigger function was executed")    
+    t.ok(testClass.res == 'triggered', ".. and the trigger function was executed")
+    
+    triggerCount++
+    
+    testClass.setTrigger('baz')
+    
+    t.done()
 })    

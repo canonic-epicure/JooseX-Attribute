@@ -1,7 +1,5 @@
 StartTest(function(t) {
     
-    t.plan(11)
-    
     //==================================================================================================================================================================================
     t.diag("All-in-one test")    
     
@@ -21,8 +19,18 @@ StartTest(function(t) {
                     return 'lazyinit'
                 },
                 
-                trigger : function (value) {
+                trigger : function (value, oldValue) {
                     this.triggerTrack++
+                    
+                    if (this.triggerTrack == 1) {
+                        t.ok(value == 'lazyinit', 'Correct new value')
+                        t.ok(oldValue == null, 'Correct old value')
+                    }
+                    
+                    if (this.triggerTrack == 2) {
+                        t.ok(value == 'value', 'Correct new value')
+                        t.ok(oldValue == 'lazyinit', 'Correct old value')
+                    } 
                 }
             }
         }
@@ -44,8 +52,8 @@ StartTest(function(t) {
     
     
     //==================================================================================================================================================================================
-    t.diag("Call to initializer")    
-
+    t.diag("Call to initializer")
+    
     t.ok(testClass.res() == 'lazyinit', "Attribute was correctly and lazily initialized, combined getter works")
     
     t.ok(testClass.triggerTrack == 1, "Trigger was called with initialization value")
@@ -63,4 +71,5 @@ StartTest(function(t) {
     t.ok(testClass.res() == 'value', "Combined setter works")
     
     
+    t.done()
 })    
