@@ -19,7 +19,8 @@ StartTest(function(t) {
             },
             
             trigger : {
-                init : 'foo',
+                is      : 'rw',
+                init    : 'foo',
                 
                 trigger : function (value, oldValue) {
                     if (triggerCount == 1) {
@@ -48,6 +49,22 @@ StartTest(function(t) {
     triggerCount++
     
     testClass.setTrigger('baz')
+    
+    t.throwsOk(function () {
+        
+        Class('TestClass2', {
+            
+            has : {
+                trigger : {
+                    is : 'ro',
+                    
+                    trigger : function (value, oldValue) {
+                    } 
+                }
+            }
+        })    
+        
+    }, "Can't use `trigger` for read-only attributes", 'Correct exception on "ro/trigger" combination')
     
     t.done()
 })    

@@ -2,6 +2,9 @@ Revision history for JooseX.Attribute
 
 {{ $NEXT }}
 
+    - throw exception when using 'trigger' on read-only attributes
+    - pass old value to the trigger function as 2nd argument
+
 0.09      2010-11-01 13:30
 
     - re-release solely for `npm` platform
