@@ -2,6 +2,8 @@ Revision history for JooseX.Attribute
 
 {{ $NEXT }}
 
+0.10      2010-12-14 21:00
+
     - throw exception when using 'trigger' on read-only attributes
     - pass old value to the trigger function as 2nd argument
     - throw Error instances in several places instead of plain strings
