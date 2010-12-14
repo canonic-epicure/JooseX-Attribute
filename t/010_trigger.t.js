@@ -9,8 +9,6 @@ StartTest(function(t) {
     //==================================================================================================================================================================================
     t.diag("Trigger testing")
     
-    var triggerCount = 1
-    
     Class('TestClass', {
         has : {
             res : {
@@ -23,17 +21,10 @@ StartTest(function(t) {
                 init    : 'foo',
                 
                 trigger : function (value, oldValue) {
-                    if (triggerCount == 1) {
-                        t.ok(oldValue == 'foo', 'Correct old value')
-                        t.ok(value == 'bar', 'Trigger received new attribute value')
-                        
-                        this.setRes('triggered')
-                    }
+                    t.ok(oldValue == 'bar', 'Correct old value')
+                    t.ok(value == 'baz', 'Trigger received new attribute value')
                     
-                    if (triggerCount == 2) {
-                        t.ok(oldValue == 'bar', 'Correct old value')
-                        t.ok(value == 'baz', 'Trigger received new attribute value')
-                    }
+                    this.setRes('triggered')
                 } 
             }
         }
@@ -43,12 +34,12 @@ StartTest(function(t) {
         trigger : 'bar'
     })    
     
-    t.ok(testClass.trigger == 'bar', "Value of 'trigger' attribute is correct")    
-    t.ok(testClass.res == 'triggered', ".. and the trigger function was executed")
-    
-    triggerCount++
+    t.ok(testClass.trigger == 'bar', "Value of 'trigger' attribute is correct")   
+    t.ok(testClass.res != 'triggered', ".. and the trigger function was not executed during initialization")
     
     testClass.setTrigger('baz')
+    
+    t.ok(testClass.res == 'triggered', ".. and the trigger function was executed")
     
     t.throwsOk(function () {
         
