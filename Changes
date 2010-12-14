@@ -4,6 +4,10 @@ Revision history for JooseX.Attribute
 
     - throw exception when using 'trigger' on read-only attributes
     - pass old value to the trigger function as 2nd argument
+    - throw Error instances in several places instead of plain strings
+    - docs update
+    - bumped deps from Joose
+    - updated tests for trigger to accomodate to recent changes in Joose
 
 0.09      2010-11-01 13:30
 
