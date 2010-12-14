@@ -15,7 +15,7 @@
                 someAttribuute : {
                     init : 'foo',
 
-                    trigger : function (newValue) {
+                    trigger : function (newValue, oldValue) {
                         this.triggerCalled = true
                     } 
                 }
@@ -35,7 +35,7 @@
 
 <p><code>JooseX.Attribute.Trigger</code> is a role, which triggers a function call, after an attribute was changed via setter call.</p>
 
-<p>It is called as a method (in the scope of the instance), and receives the new value as argument. </p>
+<p>It is called as a method (in the scope of the instance), and receives the new value as 1st argument, and old value as 2nd. </p>
 
 <p>Trigger is also called when an attribute's value is passed to the constructor.</p>
 
@@ -47,7 +47,7 @@
 
 <h1 id="authors">AUTHORS</h1>
 
-<p>Nickolay Platonov <a href="&#109;&#97;i&#108;&#x74;&#111;:&#110;&#x70;&#x6C;&#x61;&#x74;&#111;&#x6E;&#x6F;&#118;&#64;&#x63;p&#97;&#x6E;&#46;&#x6F;&#x72;&#x67;">&#110;&#x70;&#x6C;&#x61;&#x74;&#111;&#x6E;&#x6F;&#118;&#64;&#x63;p&#97;&#x6E;&#46;&#x6F;&#x72;&#x67;</a></p>
+<p>Nickolay Platonov <a href="&#x6D;&#x61;&#105;&#108;&#x74;&#111;:&#110;&#x70;&#108;&#x61;&#x74;&#x6F;nov&#64;&#99;&#x70;&#97;&#x6E;&#46;&#111;&#114;&#x67;">&#110;&#x70;&#108;&#x61;&#x74;&#x6F;nov&#64;&#99;&#x70;&#97;&#x6E;&#46;&#111;&#114;&#x67;</a></p>
 
 <h1 id="copyrightandlicense">COPYRIGHT AND LICENSE</h1>
 
