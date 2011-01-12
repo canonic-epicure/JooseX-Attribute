@@ -2,6 +2,8 @@ Revision history for JooseX.Attribute
 
 {{ $NEXT }}
 
+    - re-release just to pick up the new markdown css styles, no functional changes
+
 0.10      2010-12-14 21:00
 
     - throw exception when using 'trigger' on read-only attributes
