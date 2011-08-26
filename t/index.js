@@ -12,8 +12,8 @@ Harness.configure({
     title : 'Advanced attribute test suite',
 
     preload : [
-        'jsan:Task.Joose.Core',
-        'Task.JooseX.Attribute.Bootstrap'
+        '../node_modules/joose/joose-all.js',
+        '../joosex-attribute-all.js'
     ]
 })
 

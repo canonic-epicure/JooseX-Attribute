@@ -1,4 +1,4 @@
-COMPONENTS = {
+{
     
 	"Core" : [
         "JooseX.Attribute.Delegate",
@@ -7,9 +7,15 @@ COMPONENTS = {
         "JooseX.Attribute.Accessor.Combined"
 	],
     
-    "Bootstrap" : [
-        "+Core",
-        "JooseX.Attribute"
-    ]
+    
+    "All" : {
+        
+        saveAs      : 'joosex-attribute-all.js',
+        
+        contains    : [
+            "+Core",
+            "JooseX.Attribute"
+        ]
+    }
 } 
 
